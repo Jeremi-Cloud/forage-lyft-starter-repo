@@ -1,17 +1,17 @@
 import unittest
 from datetime import datetime
 
-from engines.model.calliope import Calliope
-from engines.model.glissade import Glissade
-from engines.model.palindrome import Palindrome
-from engines.model.rorschach import Rorschach
-from engines.model.thovex import Thovex
+from model.calliope import Calliope
+from model.glissade import Glissade
+from model.palindrome import Palindrome
+from model.rorschach import Rorschach
+from model.thovex import Thovex
 
 
 class TestCalliope(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 3)
+        last_service_date = today.replace(year=today.year - 4)
         current_mileage = 0
         last_service_mileage = 0
 
@@ -47,7 +47,7 @@ class TestCalliope(unittest.TestCase):
 class TestGlissade(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 3)
+        last_service_date = today.replace(year=today.year - 4)
         current_mileage = 0
         last_service_mileage = 0
 
@@ -91,7 +91,7 @@ class TestPalindrome(unittest.TestCase):
 
     def test_battery_should_not_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 3)
+        last_service_date = today.replace(year=today.year - 2)
         warning_light_is_on = False
 
         car = Palindrome(last_service_date, warning_light_is_on)
